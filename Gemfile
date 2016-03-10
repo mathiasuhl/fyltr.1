@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.7'
 
 gem 'rails', '4.2.5'
 gem 'mysql2'
@@ -9,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bundler'
+gem 'thin'
 
 group :development do
   gem 'quiet_assets'
@@ -38,6 +40,9 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem 'rails_12factor', group: :production
+
 gem 'cancancan'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
