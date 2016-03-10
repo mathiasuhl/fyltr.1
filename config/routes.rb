@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :partner_website_visits
+
   resources :partner_websites
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

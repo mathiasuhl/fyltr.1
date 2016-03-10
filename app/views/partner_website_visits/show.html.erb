@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Partner website:</strong>
+  <%= @partner_website_visit.partner_website %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @partner_website_visit.user %>
+</p>
+
+<%= link_to 'Edit', edit_partner_website_visit_path(@partner_website_visit) %> |
+<%= link_to 'Back', partner_website_visits_path %>
