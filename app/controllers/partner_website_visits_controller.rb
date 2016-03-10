@@ -29,6 +29,7 @@ class PartnerWebsiteVisitsController < ApplicationController
   # POST /partner_website_visits.json
   def create
     @partner_website_visit = PartnerWebsiteVisit.new(partner_website_visit_params)
+    @partner_website_visits.user = current_user
 
     respond_to do |format|
       if @partner_website_visit.save
