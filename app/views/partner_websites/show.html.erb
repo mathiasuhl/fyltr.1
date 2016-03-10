@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @partner_website.url %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @partner_website.token %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @partner_website.user %>
+</p>
+
+<%= link_to 'Edit', edit_partner_website_path(@partner_website) %> |
+<%= link_to 'Back', partner_websites_path %>
