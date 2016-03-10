@@ -39,8 +39,10 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
 gem 'cancancan'
 gem 'validates_formatting_of'
