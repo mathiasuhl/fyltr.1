@@ -5,4 +5,19 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   has_many :partner_websites
   has_many :partner_website_visits
+
+
+
+  def customer?
+    role == 0
+  end
+
+  def partner?
+    role == 1
+  end
+
+  def admin?
+    role == 2
+  end
+
 end

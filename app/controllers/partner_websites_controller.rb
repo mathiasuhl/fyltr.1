@@ -1,32 +1,20 @@
 class PartnerWebsitesController < ApplicationController
+  load_and_authorize_resource
 
-  #->Prelang (scaffolding:rails/scope_to_user)
-  before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
-
-  before_action :set_partner_website, only: [:show, :edit, :update, :destroy]
-
-  # GET /partner_websites
-  # GET /partner_websites.json
   def index
     @partner_websites = PartnerWebsite.all
   end
 
-  # GET /partner_websites/1
-  # GET /partner_websites/1.json
   def show
   end
 
-  # GET /partner_websites/new
   def new
     @partner_website = PartnerWebsite.new
   end
 
-  # GET /partner_websites/1/edit
   def edit
   end
 
-  # POST /partner_websites
-  # POST /partner_websites.json
   def create
     @partner_website = PartnerWebsite.new(partner_website_params)
     @partner_website.user = current_user
@@ -42,8 +30,6 @@ class PartnerWebsitesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /partner_websites/1
-  # PATCH/PUT /partner_websites/1.json
   def update
     respond_to do |format|
       if @partner_website.update(partner_website_params)
@@ -56,8 +42,6 @@ class PartnerWebsitesController < ApplicationController
     end
   end
 
-  # DELETE /partner_websites/1
-  # DELETE /partner_websites/1.json
   def destroy
     @partner_website.destroy
     respond_to do |format|
@@ -67,12 +51,6 @@ class PartnerWebsitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_partner_website
-      @partner_website = PartnerWebsite.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def partner_website_params
       params.require(:partner_website).permit(:url, :token, :user_id)
     end
