@@ -1,4 +1,8 @@
 class PartnerWebsitesController < ApplicationController
+
+  #->Prelang (scaffolding:rails/scope_to_user)
+  before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
+
   before_action :set_partner_website, only: [:show, :edit, :update, :destroy]
 
   # GET /partner_websites
