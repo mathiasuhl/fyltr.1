@@ -29,6 +29,7 @@ class PartnerWebsitesController < ApplicationController
   # POST /partner_websites.json
   def create
     @partner_website = PartnerWebsite.new(partner_website_params)
+    @partner_website.user = current_user
 
     respond_to do |format|
       if @partner_website.save
