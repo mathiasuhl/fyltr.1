@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :payments
+
   resources :partner_website_visits
 
   resources :partner_websites
